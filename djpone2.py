@@ -9,7 +9,7 @@ channels = ["#equestria","#kame-house"]
 channel = ""
 server = "irc.slashnet.org"
 nickname = "d3rpyh00v3z"
-pw = "kegger"
+pw = ""
 timerEnd = datetime.datetime.fromtimestamp(99999999999)
 
 
