@@ -47,3 +47,33 @@ class IRCBot:
             self.irc.send(versionstring.encode("UTF-8"))
 
         return text
+
+    def timecruncher(self,tyme):
+        x = 0
+        fract = ''
+        numlist = {}
+        accept = ['s','m','d','y','h','w']
+        good = 1
+        while x < len(tyme):
+            try:
+                int(tyme[x])
+                fract = fract+tyme[x]
+                x+=1
+            except:
+                if tyme[x] in accept:
+                    numlist[tyme[x]]=fract
+                    fract = ''
+                    x+=1
+                else:
+                    good = 0
+                    x+=1
+        if good == 0:
+            return 0
+        else:
+            print(numlist)
+            total = 0
+            denoms = {'s':1,'m':60,'h':3600,'w':604800,'d':86400,'y':31536000}
+            for entry in numlist:
+                total = total + (int(numlist[entry])*denoms[entry])
+            return total
+
