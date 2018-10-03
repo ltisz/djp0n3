@@ -16,7 +16,5 @@ while True:
     for chan in channels:
         if chan in text:
             channel = chan 
-    if "PRIVMSG" in text and channel in text and "hello" in text:
+    if "PRIVMSG" in text and channel in text and ":hello" in text:
         irc.send(channel, "Hello!")
-    if "PRIVMSG" in text and channel in text and ":N" in text:
-        irc.send(channel, "I")
